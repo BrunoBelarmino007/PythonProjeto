@@ -1,0 +1,1 @@
+Iniciando o Projeto que será desenvolvido durante o curso de Desenvolvendo um projeto completo python com estrutura de dados
