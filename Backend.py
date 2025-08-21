@@ -57,4 +57,19 @@ def cpf_exists(cpf):
     trans.disconnect()
     return count > 0
 
+def insert(nome, sobrenome, email, cpf):
+    if cpf_exists(cpf):
+        return False  # CPF já existe
+    
+    trans = TransactionObject()
+    trans.connect()
+    try:
+        trans.execute("INSERT INTO clientes VALUES(NULL, ?, ?, ?, ?)", (nome, sobrenome, email, cpf))
+        trans.persist()
+        trans.disconnect()
+        return True
+    except sql.IntegrityError:
+        trans.disconnect()
+        return False  # Erro de integridade (CPF duplicado)
+    
 initDB()
