@@ -72,4 +72,12 @@ def insert(nome, sobrenome, email, cpf):
         trans.disconnect()
         return False  # Erro de integridade (CPF duplicado)
     
+def view():
+    trans = TransactionObject()
+    trans.connect()
+    trans.execute("SELECT * FROM clientes")
+    rows = trans.fetchall()
+    trans.disconnect()
+    return rows
+
 initDB()
