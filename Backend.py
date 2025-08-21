@@ -80,4 +80,15 @@ def view():
     trans.disconnect()
     return rows
 
+def search(nome="", sobrenome="", email="", cpf=""):
+    trans = TransactionObject()
+    trans.connect()
+    trans.execute(
+        "SELECT * FROM clientes WHERE nome=? or sobrenome=? or email=? or cpf=?", 
+        (nome, sobrenome, email, cpf)
+    )
+    rows = trans.fetchall()
+    trans.disconnect()
+    return rows
+
 initDB()
