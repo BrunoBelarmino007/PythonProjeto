@@ -34,3 +34,19 @@ class TransactionObject():
             return True
         else:
             return False
+        
+def initDB():
+    trans = TransactionObject()
+    trans.connect()
+    trans.execute("""
+        CREATE TABLE IF NOT EXISTS clientes (
+            id INTEGER PRIMARY KEY,
+            nome TEXT,
+            sobrenome TEXT,
+            email TEXT,
+            cpf TEXT UNIQUE)
+        """)
+    trans.persist()
+    trans.disconnect()
+
+initDB()
