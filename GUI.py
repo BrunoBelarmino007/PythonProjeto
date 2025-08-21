@@ -65,3 +65,7 @@ class Gui():
         self.btnUpdate.grid(row=7, column=0, columnspan=2)
         self.btnDel.grid(row=8, column=0, columnspan=2)
         self.btnClose.grid(row=9, column=0, columnspan=2)
+
+        # União do Scrollbar com a Listbox
+        self.listClientes.configure(yscrollcommand=self.scrollClientes.set)
+        self.scrollClientes.configure(command=self.listClientes.yview)
