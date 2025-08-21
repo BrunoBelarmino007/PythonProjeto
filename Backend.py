@@ -91,4 +91,11 @@ def search(nome="", sobrenome="", email="", cpf=""):
     trans.disconnect()
     return rows
 
+def delete(id):
+    trans = TransactionObject()
+    trans.connect()
+    trans.execute("DELETE FROM clientes WHERE id = ?", (id,))
+    trans.persist()
+    trans.disconnect()
+    
 initDB()
