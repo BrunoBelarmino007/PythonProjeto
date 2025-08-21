@@ -49,4 +49,12 @@ def initDB():
     trans.persist()
     trans.disconnect()
 
+def cpf_exists(cpf):
+    trans = TransactionObject()
+    trans.connect()
+    trans.execute("SELECT COUNT(*) FROM clientes WHERE cpf = ?", (cpf,))
+    count = trans.fetchall()[0][0]
+    trans.disconnect()
+    return count > 0
+
 initDB()
