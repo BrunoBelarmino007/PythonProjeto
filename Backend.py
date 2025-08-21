@@ -14,3 +14,13 @@ class TransactionObject():
     def disconnect(self):
         TransactionObject.conn.close()
         TransactionObject.connected = False
+
+    def execute(self, sql, parms=None):
+        if TransactionObject.connected:
+            if parms == None:
+                TransactionObject.cur.execute(sql)
+            else:
+                TransactionObject.cur.execute(sql, parms)
+            return True
+        else:
+            return False
