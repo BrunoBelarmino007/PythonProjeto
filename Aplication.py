@@ -58,3 +58,9 @@ def update_command():
             messagebox.showinfo("Sucesso", "Cliente atualizado com sucesso!")
         else:
             messagebox.showerror("Erro", "CPF já existe em outro registro!")
+
+def del_command():
+    if selected:
+        id = selected[0]
+        core.delete(id)
+        view_command()
