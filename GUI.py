@@ -30,3 +30,7 @@ class Gui():
         self.entSobrenome = Entry(self.window, textvariable=self.txtSobrenome, width=self.width_entry)
         self.entEmail = Entry(self.window, textvariable=self.txtEmail, width=self.width_entry)
         self.entCPF = Entry(self.window, textvariable=self.txtCPF, width=self.width_entry)
+
+        # listbox + scrollbar
+        self.listClientes = Listbox(self.window, width=100)
+        self.scrollClientes = Scrollbar(self.window)
