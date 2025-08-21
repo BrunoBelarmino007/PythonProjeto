@@ -34,3 +34,11 @@ class Gui():
         # listbox + scrollbar
         self.listClientes = Listbox(self.window, width=100)
         self.scrollClientes = Scrollbar(self.window)
+        
+        # botões
+        self.btnViewAll = Button(self.window, text="Ver Todos")
+        self.btnBuscar = Button(self.window, text="Buscar")
+        self.btnInserir = Button(self.window, text="Inserir")
+        self.btnUpdate = Button(self.window, text="Atualizar Selecionados")
+        self.btnDel = Button(self.window, text="Deletar Selecionados")
+        self.btnClose = Button(self.window, text="Fechar")
