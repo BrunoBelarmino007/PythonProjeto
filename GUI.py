@@ -69,3 +69,15 @@ class Gui():
         # União do Scrollbar com a Listbox
         self.listClientes.configure(yscrollcommand=self.scrollClientes.set)
         self.scrollClientes.configure(command=self.listClientes.yview)
+
+        for child in self.window.winfo_children():
+            widget_class = child.__class__.__name__
+            if widget_class == "Button":
+                child.grid_configure(sticky='WE', padx=self.x_pad, pady=self.y_pad)
+            elif widget_class in ("Listbox", "Scrollbar"):
+                child.grid_configure(padx=0, pady=0, sticky='NS')
+            else:
+                child.grid_configure(padx=self.x_pad, pady=self.y_pad, sticky='N')
+
+    def run(self):
+        self.window.mainloop()
