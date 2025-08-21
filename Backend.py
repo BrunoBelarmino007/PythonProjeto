@@ -24,3 +24,13 @@ class TransactionObject():
             return True
         else:
             return False
+        
+    def fetchall(self):
+        return TransactionObject.cur.fetchall()
+
+    def persist(self):
+        if TransactionObject.connected:
+            TransactionObject.conn.commit()
+            return True
+        else:
+            return False
