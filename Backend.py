@@ -97,5 +97,28 @@ def delete(id):
     trans.execute("DELETE FROM clientes WHERE id = ?", (id,))
     trans.persist()
     trans.disconnect()
+
+def update(id, nome, sobrenome, email, cpf):
+    # Verifica se o CPF já existe em outro registro
+    trans = TransactionObject()
+    trans.connect()
+    trans.execute("SELECT COUNT(*) FROM clientes WHERE cpf = ? AND id != ?", (cpf, id))
+    count = trans.fetchall()[0][0]
+    
+    if count > 0:
+        trans.disconnect()
+        return False  # CPF já existe em outro registro
+    
+    try:
+        trans.execute(
+            "UPDATE clientes SET nome=?, sobrenome=?, email=?, cpf=? WHERE id = ?", 
+            (nome, sobrenome, email, cpf, id)
+        )
+        trans.persist()
+        trans.disconnect()
+        return True
+    except sql.IntegrityError:
+        trans.disconnect()
+        return False    
     
 initDB()
