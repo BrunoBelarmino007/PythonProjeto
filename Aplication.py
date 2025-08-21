@@ -44,3 +44,17 @@ def insert_command():
         messagebox.showinfo("Sucesso", "Cliente inserido com sucesso!")
     else:
         messagebox.showerror("Erro", "CPF já existe no sistema!")
+
+def update_command():
+    if selected:
+        success = core.update(selected[0],
+                            app.txtNome.get(),
+                            app.txtSobrenome.get(),
+                            app.txtEmail.get(),
+                            app.txtCPF.get())
+        
+        if success:
+            view_command()
+            messagebox.showinfo("Sucesso", "Cliente atualizado com sucesso!")
+        else:
+            messagebox.showerror("Erro", "CPF já existe em outro registro!")
