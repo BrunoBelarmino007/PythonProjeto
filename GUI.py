@@ -18,3 +18,15 @@ class Gui():
         self.txtSobrenome = StringVar()
         self.txtEmail = StringVar()
         self.txtCPF = StringVar()
+
+        # labels
+        self.lblnome = Label(self.window, text="Nome:")
+        self.lblsobrenome = Label(self.window, text="Sobrenome:")
+        self.lblemail = Label(self.window, text="Email:")
+        self.lblcpf = Label(self.window, text="CPF:")
+
+        # entradas
+        self.entNome = Entry(self.window, textvariable=self.txtNome, width=self.width_entry)
+        self.entSobrenome = Entry(self.window, textvariable=self.txtSobrenome, width=self.width_entry)
+        self.entEmail = Entry(self.window, textvariable=self.txtEmail, width=self.width_entry)
+        self.entCPF = Entry(self.window, textvariable=self.txtCPF, width=self.width_entry)
