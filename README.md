@@ -22,6 +22,18 @@ Sistema completo de **CRUD (Create, Read, Update, Delete)** para cadastro de cli
 
 ## 🏗️ Arquitetura do Sistema
 
+### Estrutura de Arquivos
+```
+PythonProjeto/
+├── __pycache__/          # Cache do Python (auto-gerado)
+├── .gitignore            # Arquivos ignorados pelo Git
+├── Aplication.py         # Controlador principal (view-command.py)
+├── Backend.py            # Modelo de dados (transaction-object.py)
+├── GUI.py                # Interface gráfica (gui.py)
+├── clientes.db           # Banco de dados SQLite
+└── README.md             # Este arquivo
+```
+
 ### Padrão de Arquitetura MVC
 
 | Componente | Arquivo | Responsabilidade |
