@@ -27,9 +27,9 @@ Sistema completo de **CRUD (Create, Read, Update, Delete)** para cadastro de cli
 PythonProjeto/
 ├── __pycache__/          # Cache do Python (auto-gerado)
 ├── .gitignore            # Arquivos ignorados pelo Git
-├── Aplication.py         # Controlador principal (view-command.py)
-├── Backend.py            # Modelo de dados (transaction-object.py)
-├── GUI.py                # Interface gráfica (gui.py)
+├── Aplication.py         # Controlador principal 
+├── Backend.py            # Modelo de dados 
+├── GUI.py                # Interface gráfica 
 ├── clientes.db           # Banco de dados SQLite
 └── README.md             # Este arquivo
 ```
@@ -198,5 +198,6 @@ Este repositório é para fins educacionais e faz parte de uma trilha de aprendi
 
 ---
 
+Que possamos viver de forma justa e íntegra, amando mesmo quem nos fere, retribuindo o mal com o bem e cultivando a paz, com humildade, generosidade e plena confiança na justiça de Deus - Romanos 12:14 e 21.
 
 ---
