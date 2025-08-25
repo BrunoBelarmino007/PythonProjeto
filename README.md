@@ -178,7 +178,7 @@ Gerenciamento de eventos e lógica de negócio:
 * **Singleton** implícito na classe TransactionObject
 * **Command Pattern** nos eventos dos botões
 
-## Conquistas de Aprendizado
+## ✅ Principais Aprendizados
 
 Ao completar este projeto, foram consolidados:
 
